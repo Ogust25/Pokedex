@@ -9,17 +9,17 @@
 </head>
 <body class="bg-slate-50">
     <div class="m-4">
-        <header class="flex justify-between bg-pokeRed p-2 mb-5">
-            <input type="search">
-            <input type="button" class="bg-white" value="btn">
+        <header class="flex justify-between bg-pokeRed p-3 mb-5 rounded-xl">
+            <input type="search" placeholder="Choose a pokemon ..." class="rounded-md p-2 w-3/4">
+            <input type="button" value="Search" class="bg-white rounded-md w-1/5">
         </header>
-        <main class="bg-pokeRed p-5">
-            <section class="bg-slate-50">
-                <p>ID</p>
-                <img src="#" alt="Image du pokémon">
+        <main class="bg-pokeRed p-5 rounded-xl flex flex-col items-center text-lg">
+            <section class="bg-slate-50 rounded-md relative flex items-center justify-center w-40 h-40">
+                <p class="absolute top-0 left-0 mt-2 ml-2">#41</p>
+                <img src="./zubat.png" alt="Image du pokémon">
             </section>
             <section class="flex flex-col items-center">
-                <h2>Nom</h2>
+                <h2 class="text-xl mb-3">Nom</h2>
                 <div class="w-full flex justify-evenly">
                     <div>
                         <p>Type 1</p>
@@ -29,20 +29,20 @@
                     </div>
                 </div>
                 <div class="w-full flex justify-evenly">
-                    <p>Taille : XX</p>
+                    <p class="mr-3">Taille : XX</p>
                     <p>Poids : XX</p>
                 </div>
             </section>
-            <section class="w-full">
-                <h2>Talents :</h2>
-                <div class="flex flex-wrap justify-evenly gap-x-10">
+            <section class="w-full m-3">
+                <h3>Talents :</h3>
+                <div class="flex flex-wrap justify-evenly gap-x-10 gap-y-2">
                     <p>Talent 1</p>
                     <p>Talent 2</p>
                 </div>
             </section>
             <section class="w-full">
-                <h2>Capacités :</h2>
-                <div class="flex flex-wrap justify-evenly gap-x-10">
+                <h3>Capacités :</h3>
+                <div class="flex flex-wrap justify-evenly gap-x-10 gap-y-2">
                     <p>Capacité 1</p>
                     <p>Capacité 2</p>
                     <p>Capacité 3</p>
