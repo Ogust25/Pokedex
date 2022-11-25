@@ -9,15 +9,26 @@ const pokeType2 = document.querySelector('#pokeType2');
 const pokeHeight = document.querySelector('#pokeHeight');
 const pokeWeight = document.querySelector('#pokeWeight');
 
-
+// Event click
 btnSearch.addEventListener('click', () => {
-    let search = inputSearch.value;
+    apiCall(inputSearch.value);
+    inputSearch.value = "";
+})
+
+// Event enter key
+inputSearch.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      btnSearch.click();
+    }
+});
+
+// ApiCall
+function apiCall(search) {
     let url = `https://pokeapi.co/api/v2/pokemon/${search}`;
 
     fetch(url).then((response) =>
     response.json().then((data) => {
-        // console.log(data);
-
         pokeId.firstChild.nodeValue = "#" + data.id;
         pokeImg.src = data.sprites.front_default;
 
@@ -34,8 +45,7 @@ btnSearch.addEventListener('click', () => {
         pokeWeight.firstChild.nodeValue = "Poids : " + data.weight/10 + " kg";
     
     })
-)
-})
+)}
 
 function upperFirstChar(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
