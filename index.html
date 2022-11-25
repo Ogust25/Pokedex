@@ -7,39 +7,39 @@
     <title>Pokédex</title>
     <link rel="stylesheet" href="./dist/output.css">
 </head>
-<body class="bg-slate-50">
-    <div class="m-4">
-        <header class="flex justify-between bg-pokeRed p-3 mb-5 rounded-xl">
+<body class="bg-slate-50 font-pokeFont flex justify-center">
+    <div class="m-4 sm:w-2/5">
+        <header class="flex justify-between bg-pokeRed p-3 mb-5 rounded-xl shadow-pokeInner">
             <input type="search" placeholder="Choose a pokemon ..." id="inputSearch" class="rounded-md p-2 w-3/4">
-            <input type="button" value="Search" id="btnSearch" class="bg-white rounded-md w-1/5">
+            <input type="button" value="Search" id="btnSearch" class="bg-white rounded-md w-1/5 font-bold hover:bg-pokeBlue">
         </header>
-        <main class="bg-pokeRed p-5 rounded-xl flex flex-col items-center text-lg">
-            <section class="bg-slate-50 rounded-md relative flex items-center justify-center w-40 h-40">
+        <main class="bg-pokeRed p-5 rounded-xl flex flex-col items-center text-sm shadow-pokeInner">
+            <section class="bg-slate-50 rounded-md relative flex items-center justify-center w-40 h-40 shadow-pokeInner">
                 <p class="absolute top-0 left-0 mt-2 ml-2" id="pokeId">#41</p>
                 <img src="./zubat.png" alt="Image du pokémon" id="pokeImg">
             </section>
             <section class="flex flex-col items-center">
-                <h2 class="text-xl mb-3" id="pokeName">Nom</h2>
-                <div class="w-full flex justify-evenly">
-                    <div>
+                <h2 class="text-xl mb-3 font-bold" id="pokeName">Nom</h2>
+                <div class="w-full flex justify-evenly mb-3 text-white">
+                    <div class="rounded-full py-1 px-3" id="pokeType1Color">
                         <p id="pokeType1">Type 1</p>
                     </div>
-                    <div>
+                    <div class="rounded-full py-1 px-3" id="pokeType2Color">
                         <p id="pokeType2">Type 2</p>
                     </div>
                 </div>
                 <div class="w-full flex justify-evenly">
-                    <p class="mr-3"  id="pokeHeight">Taille : XX</p>
-                    <p id="pokeWeight">Poids : XX</p>
+                    <p class="mr-5"  id="pokeHeight">Taille : ---</p>
+                    <p id="pokeWeight">Poids : ---</p>
                 </div>
             </section>
-            <section class="w-full m-3">
-                <h3>Talents :</h3>
+            <section class="w-full m-8">
+                <h3 class="font-bold text-white">Talents :</h3>
                 <div class="flex flex-wrap justify-evenly gap-x-10 gap-y-2" id="pokeAbilitiesContainer">
                 </div>
             </section>
             <section class="w-full">
-                <h3>Capacités :</h3>
+                <h3 class="font-bold text-white">Capacités :</h3>
                 <div class="flex flex-wrap justify-evenly gap-x-10 gap-y-2" id="pokeMovesContainer">
 
                 </div>
