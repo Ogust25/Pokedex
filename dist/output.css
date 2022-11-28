@@ -563,6 +563,18 @@ video {
   margin-right: 1.25rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -605,6 +617,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .justify-evenly {
@@ -669,6 +685,14 @@ video {
   padding-right: 0.75rem;
 }
 
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .font-pokeFont {
   font-family: PKMN RBYGSC;
 }
@@ -704,14 +728,6 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:w-1\/5 {
-    width: 20%;
-  }
-
-  .sm\:w-96 {
-    width: 24rem;
-  }
-
   .sm\:w-2\/5 {
     width: 40%;
   }
