@@ -9,9 +9,12 @@
 </head>
 <body class="bg-slate-50 font-pokeFont flex justify-center">
     <div class="m-4 sm:w-2/5">
-        <header class="flex justify-between bg-pokeRed p-3 mb-5 rounded-xl shadow-pokeInner">
-            <input type="search" placeholder="Choose a pokemon ..." id="inputSearch" class="rounded-md p-2 w-3/4">
-            <input type="button" value="Search" id="btnSearch" class="bg-white rounded-md w-1/5 font-bold hover:bg-pokeBlue">
+        <header class="flex flex-col bg-pokeRed p-3 mb-5 rounded-xl shadow-pokeInner">
+            <div class="flex justify-between">
+                <input type="search" placeholder="Choose a pokemon ..." id="inputSearch" class="rounded-md p-2 w-3/4">
+                <input type="button" value="Search" id="btnSearch" class="bg-white rounded-md w-1/5 font-bold hover:bg-pokeBlue">
+            </div>
+            <p class="text-white hidden" id="searchError">Ce pokémon n'existe pas</p>
         </header>
         <main class="bg-pokeRed p-5 rounded-xl flex flex-col items-center text-sm shadow-pokeInner">
             <section class="bg-slate-50 rounded-md relative flex items-center justify-center w-40 h-40 shadow-pokeInner">

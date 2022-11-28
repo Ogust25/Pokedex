@@ -1,5 +1,6 @@
 const btnSearch = document.querySelector('#btnSearch');
 const inputSearch = document.querySelector('#inputSearch');
+const searchError = document.querySelector('#searchError');
 
 const pokeId = document.querySelector('#pokeId');
 const pokeImg = document.querySelector('#pokeImg');
@@ -13,9 +14,13 @@ const pokeWeight = document.querySelector('#pokeWeight');
 const pokeAbilitiesContainer = document.querySelector('#pokeAbilitiesContainer');
 const pokeMovesContainer = document.querySelector('#pokeMovesContainer');
 
+// 1er call au chargement de la page
+apiCall("pikachu")
+
 // Event click
 btnSearch.addEventListener('click', () => {
-    apiCall(inputSearch.value);
+    let search = inputSearch.value.toLowerCase();
+    apiCall(search);
     inputSearch.value = "";
 })
 
@@ -31,8 +36,12 @@ inputSearch.addEventListener("keypress", function(event) {
 function apiCall(search) {
     let url = `https://pokeapi.co/api/v2/pokemon/${search}`;
 
-    fetch(url).then((response) =>
-    response.json().then((data) => {
+    fetch(url)
+    .then( response => response.json() )
+    .catch( () => {
+        searchError.classList.remove('hidden');
+    })
+    .then( data => {
 
         // ID
         pokeId.firstChild.nodeValue = "#" + data.id;
@@ -88,16 +97,26 @@ function apiCall(search) {
 
             fetch(data.moves[i].move.url).then((response) =>
             response.json().then((data) => {
-                let movePower = newElem("p", {class: ''}, data.power);
+                let powerTxt = "--";
+                if (data.power !== null) {
+                    powerTxt = data.power;
+                }
+                let movePower = newElem("p", {class: ''}, powerTxt);
                 let desc = data.effect_entries[0].short_effect.replace("$effect_chance", data.effect_chance);
                 let moveDesc = newElem("p", {class: 'ml-3'}, upperFirstChar(desc));
                 moveContainerNP.insertBefore(movePower, null);
                 moveContainer.insertBefore(moveDesc, null);
             }))
         }
+
+        // Enlever le msg d'erreur
+        searchError.classList.add('hidden');
     
     })
-)}
+    .catch( error => {
+       // console.log(error);
+    })
+}
 
 // Fonction pour ajouter la 1ere lettre en Majuscule
 function upperFirstChar(string) {
